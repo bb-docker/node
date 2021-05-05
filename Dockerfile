@@ -15,6 +15,14 @@ RUN npm install -g \
     express-generator \
     create-react-library
 
+# File setting
+COPY ./create-express.sh /create-express.sh
+COPY ./create-react.sh /create-react.sh
+
+# Start the Services
+RUN chmod +x /create-express.sh \
+ && chmod +x /create-react.sh
+
 RUN mkdir -p /var/www
 WORKDIR /var/www
 EXPOSE 3000

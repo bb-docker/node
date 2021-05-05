@@ -19,15 +19,14 @@ npm --version
 
 ### Create Express Project
 ```
-express --view=hbs /var/www && cd /var/www
-npm install
+/create-express.sh
 npm start
 ```
 
 ### Create React Project
 ```
-npx create-react-app your-app-name
-cd your-app-name
+/create-react.sh
+cd $YourProject
 npm start
 ```
 
