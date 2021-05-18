@@ -25,16 +25,24 @@ npm start
 
 ### Create React Project
 ```
-/create-react.sh
-cd $YourProject
+# React
+npx create-react-app example --template bb-react-temp
+
+# React + Typescript
+npx create-react-app example --template bb-typescript-temp
+
+cd {YourProject}
 npm start
 ```
 
 ### Create React Library
 ```
 npx create-react-library your-app-name
-cd your-app-name
+
+cd {your-app-name}
 npm start
+
+# Testing
 cd example
 npm start
 ```
