@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 14.x repo onto a
+# Script to install the NodeSource Node.js 16.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup_14.x | bash -
+# curl -sL https://deb.nodesource.com/setup_16.x | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup_14.x | bash -
+# wget -qO- https://deb.nodesource.com/setup_16.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -21,9 +21,9 @@
 
 
 export DEBIAN_FRONTEND=noninteractive
-SCRSUFFIX="_14.x"
-NODENAME="Node.js 14.x"
-NODEREPO="node_14.x"
+SCRSUFFIX="_16.x"
+NODENAME="Node.js 16.x"
+NODEREPO="node_16.x"
 NODEPKG="nodejs"
 
 print_status() {
@@ -108,9 +108,10 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_12.x â€” Node.js 12 LTS \"Erbium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_14.x â€” Node.js 14 LTS \"Fermium\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_16.x â€” Node.js 16 \"Gallium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_16.x — Node.js 16 \"Gallium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_17.x — Node.js 17 \"Seventeen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -137,9 +138,10 @@ This script, located at ${bold}https://deb.nodesource.com/setup${normal}, used t
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_12.x â€” Node.js 12 LTS \"Erbium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_14.x â€” Node.js 14 LTS \"Fermium\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_16.x â€” Node.js 16 \"Gallium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_16.x — Node.js 16 \"Gallium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_17.x — Node.js 17 \"Seventeen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -225,9 +227,11 @@ check_alt "Kali"          "sana"     "Debian" "jessie"
 check_alt "Kali"          "kali-rolling" "Debian" "bullseye"
 check_alt "Sparky Linux"  "Tyche"    "Debian" "stretch"
 check_alt "Sparky Linux"  "Nibiru"   "Debian" "buster"
+check_alt "Sparky Linux"  "Po-Tolo"   "Debian" "bullseye"
 check_alt "MX Linux 17"   "Horizon"  "Debian" "stretch"
 check_alt "MX Linux 18"   "Continuum" "Debian" "stretch"
 check_alt "MX Linux 19"   "patito feo" "Debian" "buster"
+check_alt "MX Linux 21"   "wildflower" "Debian" "bullseye"
 check_alt "Linux Mint"    "maya"     "Ubuntu" "precise"
 check_alt "Linux Mint"    "qiana"    "Ubuntu" "trusty"
 check_alt "Linux Mint"    "rafaela"  "Ubuntu" "trusty"
@@ -244,6 +248,7 @@ check_alt "Linux Mint"    "tricia"   "Ubuntu" "bionic"
 check_alt "Linux Mint"    "ulyana"   "Ubuntu" "focal"
 check_alt "Linux Mint"    "ulyssa"   "Ubuntu" "focal"
 check_alt "Linux Mint"    "uma"      "Ubuntu" "focal"
+check_alt "Linux Mint"    "una"      "Ubuntu" "focal"
 check_alt "LMDE"          "betsy"    "Debian" "jessie"
 check_alt "LMDE"          "cindy"    "Debian" "stretch"
 check_alt "LMDE"          "debbie"   "Debian" "buster"
@@ -253,6 +258,7 @@ check_alt "elementaryOS"  "loki"     "Ubuntu" "xenial"
 check_alt "elementaryOS"  "juno"     "Ubuntu" "bionic"
 check_alt "elementaryOS"  "hera"     "Ubuntu" "bionic"
 check_alt "elementaryOS"  "odin"     "Ubuntu" "focal"
+check_alt "elementaryOS"  "jolnir"   "Ubuntu" "focal"
 check_alt "Trisquel"      "toutatis" "Ubuntu" "precise"
 check_alt "Trisquel"      "belenos"  "Ubuntu" "trusty"
 check_alt "Trisquel"      "flidas"   "Ubuntu" "xenial"
@@ -268,9 +274,11 @@ check_alt "bunsenlabs"    "lithium"  "Debian" "buster"
 check_alt "Tanglu"        "chromodoris" "Debian" "jessie"
 check_alt "PureOS"        "green"    "Debian" "sid"
 check_alt "PureOS"        "amber"    "Debian" "buster"
+check_alt "PureOS"        "byzantium" "Debian" "bullseye"
 check_alt "Devuan"        "jessie"   "Debian" "jessie"
 check_alt "Devuan"        "ascii"    "Debian" "stretch"
 check_alt "Devuan"        "beowulf"  "Debian" "buster"
+check_alt "Devuan"        "chimaera"  "Debian" "bullseye"
 check_alt "Devuan"        "ceres"    "Debian" "sid"
 check_alt "Deepin"        "panda"    "Debian" "sid"
 check_alt "Deepin"        "unstable" "Debian" "sid"
