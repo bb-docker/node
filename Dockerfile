@@ -1,4 +1,4 @@
-FROM bananabb/ubuntu:20.04
+FROM bananabb/ubuntu:22.04
 MAINTAINER BananaBb
 
 # File setting

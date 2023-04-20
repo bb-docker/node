@@ -26,10 +26,7 @@ npm start
 ### Create React Project
 ```
 # React
-npx create-react-app example --template bb-react-temp
-
-# React + Typescript
-npx create-react-app example --template bb-typescript-temp
+npx create-react-app example
 
 cd {YourProject}
 npm start
